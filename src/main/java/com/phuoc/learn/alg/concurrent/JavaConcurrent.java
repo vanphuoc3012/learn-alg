@@ -1,36 +1,44 @@
 package com.phuoc.learn.alg.concurrent;
 
-public class JavaConcurrent {
-//    public static void main(String[] args) throws InterruptedException {
-//        Thread th1 = new Thread(() -> {
-//            Thread currentThread = Thread.currentThread();
-//            System.out.println(currentThread.getName() + " priority = " + currentThread.getPriority());
-//        });
-//
-//        Thread th2 = new Thread(() -> {
-//            Thread currentThread = Thread.currentThread();
-//            System.out.println(currentThread.getName() + " priority = " + currentThread.getPriority());
-//        });
-//
-//        th1.setPriority(Thread.MAX_PRIORITY);
-//        th2.setPriority(Thread.MIN_PRIORITY);
-//
-//        th1.start();
-//        th2.start();
-//
-//        th1.join();
-//        th2.join();
-//    }
+import java.util.ArrayList;
+import java.util.List;
 
-    public static void main(String[] args) throws InterruptedException {
-        Thread th1 = new Thread(() -> {
-            Thread currentThread = Thread.currentThread();
-            System.out.println(currentThread.getName() + " priority = " + currentThread.getPriority() + " state = " + currentThread.getState());
+public class JavaConcurrent {
+    private static int globalCounter = 0;
+    private static final Object obj = new Object();
+
+    public static void main(String[] args) {
+        ThreadGroup threadGroup = new ThreadGroup("Group 1");
+        List<Thread> threadList = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            Thread t = new Thread(threadGroup, new MyThread());
+            t.start();
+            threadList.add(t);
+        }
+
+        threadGroup.interrupt();
+
+        threadList.forEach(t -> {
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         });
 
-        th1.start();
-        th1.join();
+        System.out.println("Global counter: " + globalCounter);
+    }
 
-        System.out.println("*2* State: " + Thread.currentThread().getState());
+    static class MyThread implements Runnable {
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(99999);
+            } catch (InterruptedException e) {
+            }
+            synchronized (obj) {
+                globalCounter++;
+            }
+        }
     }
 }

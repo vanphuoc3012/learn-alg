@@ -1,31 +1,28 @@
 package com.phuoc.learn.alg;
 
-import com.phuoc.learn.alg.graph.Graph;
-
-import java.io.*;
-import java.nio.file.Paths;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
+        System.out.println(fr(9));
+    }
 
-        File tinyG = Paths.get("tinyG.txt").toFile();
-        File mediumG = Paths.get("mediumG.txt").toFile();
-        File largeG = Paths.get("largeG.txt").toFile();
-//        FileReader fileReader = new FileReader(tinyG);
-//        BufferedReader br = new BufferedReader(fileReader);
-//        String line = null;
-//        while ((line = br.readLine()) != null) {
-//            System.out.println(line);
-//        }
+    static int fr(int n) {
+        int[] arr = new int[n + 1];
+        arr[0] = 0;
+        arr[1] = 1;
 
-        InputStream is = new FileInputStream(largeG);
-        Scanner scanner = new Scanner(new BufferedInputStream(is));
+        return fr(n, arr);
+    }
 
-        Graph graph = new Graph(scanner);
-        System.out.println(graph);
+    static int fr(int n, int[] arr) {
+        if (n < 2) return arr[n];
 
+        if (arr[n] != 0) return arr[n];
+        int v = fr(n - 1, arr) + fr(n - 2, arr);
+        arr[n] = v;
+        return v;
     }
 }
 
