@@ -31,11 +31,25 @@ public class BST<Key extends Comparable<Key>, Value> {
     private Node put(Node x, Key k, Value v) {
         if (x == null) return new Node(k, v, 1);
         int comp = k.compareTo(x.key);
-        if (comp < 0) x.left = put(x.left, k, v);
-        if (comp > 0) x.right = put(x.right, k, v);
-        x.val = v;
+        if (comp < 0) {
+            x.left = put(x.left, k, v);
+        } else if (comp > 0) {
+            x.right = put(x.right, k, v);
+        } else {
+            x.val = v;
+        }
+
         x.N = size(x.left) + size(x.right) + 1;
         return x;
+    }
+
+    public Key min() {
+        return min(root).key;
+    }
+
+    private Node min(Node x) {
+        if (x.left == null) return x;
+        return min(x.left);
     }
 
     private class Node {
