@@ -1,8 +1,8 @@
-package com.phuoc.learn.alg.concurrent.chap02.main;
+package com.phuoc.learn.alg.concurrent.chap03.main;
 
-import com.phuoc.learn.alg.concurrent.chap02.data.BankMarketing;
-import com.phuoc.learn.alg.concurrent.chap02.loader.BankMarketingLoader;
-import com.phuoc.learn.alg.concurrent.chap02.serial.KnnClassifier;
+import com.phuoc.learn.alg.concurrent.chap03.data.BankMarketing;
+import com.phuoc.learn.alg.concurrent.chap03.loader.BankMarketingLoader;
+import com.phuoc.learn.alg.concurrent.chap03.serial.KnnClassifier;
 
 import java.util.Date;
 import java.util.List;

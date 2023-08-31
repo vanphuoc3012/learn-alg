@@ -1,8 +1,8 @@
-package com.phuoc.learn.alg.concurrent.chap02.serial;
+package com.phuoc.learn.alg.concurrent.chap03.serial;
 
-import com.phuoc.learn.alg.concurrent.chap02.data.Distance;
-import com.phuoc.learn.alg.concurrent.chap02.data.Sample;
-import com.phuoc.learn.alg.concurrent.chap02.distances.EuclideanDistanceCalculator;
+import com.phuoc.learn.alg.concurrent.chap03.data.Distance;
+import com.phuoc.learn.alg.concurrent.chap03.data.Sample;
+import com.phuoc.learn.alg.concurrent.chap03.distances.EuclideanDistanceCalculator;
 
 import java.util.*;
 

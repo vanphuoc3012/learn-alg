@@ -1,6 +1,6 @@
-package com.phuoc.learn.alg.concurrent.chap02.distances;
+package com.phuoc.learn.alg.concurrent.chap03.distances;
 
-import com.phuoc.learn.alg.concurrent.chap02.data.Sample;
+import com.phuoc.learn.alg.concurrent.chap03.data.Sample;
 
 public class EuclideanDistanceCalculator {
     /**

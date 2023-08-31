@@ -1,4 +1,4 @@
-package com.phuoc.learn.alg.concurrent.chap02.data;
+package com.phuoc.learn.alg.concurrent.chap03.data;
 
 public class BankMarketing extends Sample {
     private byte age;
