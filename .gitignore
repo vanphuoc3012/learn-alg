@@ -40,3 +40,4 @@ build/
 .idea/sonarlint
 
 data
+!/data/chap03/WDI_Data.csv
