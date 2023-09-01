@@ -1,6 +1,7 @@
 package com.phuoc.learn.alg.concurrent.chap03.loader;
 
-import com.phuoc.learn.alg.concurrent.chap03.data.BankMarketing;
+import com.phuoc.learn.alg.concurrent.chap03.knn.data.BankMarketing;
+import com.phuoc.learn.alg.concurrent.chap03.knn.loader.BankMarketingLoader;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
