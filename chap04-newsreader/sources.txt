@@ -1,0 +1,8 @@
+BBC;http://feeds.bbci.co.uk/news/world/rss.xml
+Financial Times;https://www.ft.com/world?format=rss
+The New York Times;https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+Washington Post;https://feeds.washingtonpost.com/rss/world
+Los Angeles Times;https://www.latimes.com/world/rss2.0.xml
+Wall Street Journal;https://feeds.a.dj.com/rss/RSSWorldNews.xml
+Denver Post - Sport;http://feeds.denverpost.com/dp-sports
+New York Post;https://nypost.com/news/feed/

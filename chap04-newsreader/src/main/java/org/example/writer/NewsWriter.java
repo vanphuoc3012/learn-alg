@@ -28,13 +28,14 @@ public class NewsWriter implements Runnable {
                         BufferedWriter fileWriter = Files.newBufferedWriter(path,
                                                                             StandardOpenOption.CREATE)
                 ) {
+                    System.out.println("Writing to file: " + item.getFileName());
                     fileWriter.write(item.toXML());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         } catch (InterruptedException e) {
-            
+
         }
     }
 }

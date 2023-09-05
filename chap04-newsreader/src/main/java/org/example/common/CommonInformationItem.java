@@ -68,7 +68,7 @@ public class CommonInformationItem {
     public String toXML() {
         StringWriter writer = new StringWriter();
         writer.append("<item>\n");
-        writer.append("<ide>\n");
+        writer.append("<id>\n");
         writer.append(id);
         writer.append("\n</id>\n");
         writer.append("\n<title>\n");

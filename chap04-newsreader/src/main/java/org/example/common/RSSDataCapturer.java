@@ -59,11 +59,11 @@ public class RSSDataCapturer extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName,
                              Attributes attributes) throws SAXException {
-        System.out.println("****START ELEMENT****");
-        System.out.println("Uri: " + uri);
-        System.out.println("Local Name: " + localName);
-        System.out.println("QName: " + qName);
-        System.out.println("****START ELEMENT****");
+        /* System.out.println("****START ELEMENT****");
+         System.out.println("Uri: " + uri);
+         System.out.println("Local Name: " + localName);
+         System.out.println("QName: " + qName);
+         System.out.println("****START ELEMENT****"); */
 
         if ((item != null) && (qName.equalsIgnoreCase("title"))) {
             status = IN_TITLE;
@@ -93,11 +93,11 @@ public class RSSDataCapturer extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        System.out.println("****END ELEMENT****");
+       /* System.out.println("****END ELEMENT****");
         System.out.println("Uri: " + uri);
         System.out.println("Local Name: " + localName);
         System.out.println("QName: " + qName);
-        System.out.println("****END ELEMENT****");
+        System.out.println("****END ELEMENT****"); */
         if ((item != null) && (qName.equalsIgnoreCase("title"))) {
             item.setTitle(buffer.toString());
             status = 0;
@@ -136,7 +136,7 @@ public class RSSDataCapturer extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-        System.out.println("DEBUG: " + methodName + ": Text to: " + new String(ch, start, length));
+//        System.out.println("DEBUG: " + methodName + ": Text to: " + new String(ch, start, length));
         String txt = new String(ch, start, length);
         buffer.append(txt.trim());
     }

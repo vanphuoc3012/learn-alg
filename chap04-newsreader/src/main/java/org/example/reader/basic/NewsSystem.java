@@ -40,6 +40,7 @@ public class NewsSystem implements Runnable {
         ) {
             String line = null;
             while ((line = reader.readLine()) != null) {
+                System.out.println("Reading line: " + line);
                 String[] data = line.split(";");
 
                 NewsTask task = new NewsTask(data[0], data[1], buffer);
