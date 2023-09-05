@@ -1,6 +1,7 @@
 package com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.server;
 
-import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.*;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.Command;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.command.*;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.parallel.cache.ParallelCache;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.parallel.log.Logger;
 
@@ -19,11 +20,9 @@ public class RequestTask implements Runnable {
 
     @Override
     public void run() {
-        try (
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(
-                        new InputStreamReader(clientSocket.getInputStream()));
-        ) {
+        try (PrintWriter out = new PrintWriter(clientSocket.getOutputStream(),
+                                               true); BufferedReader in = new BufferedReader(
+                new InputStreamReader(clientSocket.getInputStream()))) {
 
             String line = in.readLine();
 

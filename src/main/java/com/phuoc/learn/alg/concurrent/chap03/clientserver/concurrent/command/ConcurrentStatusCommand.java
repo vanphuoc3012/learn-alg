@@ -1,5 +1,6 @@
-package com.phuoc.learn.alg.concurrent.chap03.clientserver.common;
+package com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.command;
 
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.Command;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.server.ConcurrentServer;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.parallel.log.Logger;
 
@@ -18,31 +19,31 @@ public class ConcurrentStatusCommand extends Command {
 
         sb.append("Server Status;");
         sb.append("Actived Threads: ");
-        sb.append(String.valueOf(executor.getActiveCount()));
+        sb.append(executor.getActiveCount());
         sb.append(";");
         sb.append("Maximum Pool Size: ");
-        sb.append(String.valueOf(executor.getMaximumPoolSize()));
+        sb.append(executor.getMaximumPoolSize());
         sb.append(";");
         sb.append("Core Pool Size: ");
-        sb.append(String.valueOf(executor.getCorePoolSize()));
+        sb.append(executor.getCorePoolSize());
         sb.append(";");
         sb.append("Pool Size: ");
-        sb.append(String.valueOf(executor.getPoolSize()));
+        sb.append(executor.getPoolSize());
         sb.append(";");
         sb.append("Largest Pool Size: ");
-        sb.append(String.valueOf(executor.getLargestPoolSize()));
+        sb.append(executor.getLargestPoolSize());
         sb.append(";");
         sb.append("Completed Task Count: ");
-        sb.append(String.valueOf(executor.getCompletedTaskCount()));
+        sb.append(executor.getCompletedTaskCount());
         sb.append(";");
         sb.append("Task Count: ");
-        sb.append(String.valueOf(executor.getTaskCount()));
+        sb.append(executor.getTaskCount());
         sb.append(";");
         sb.append("Queue Size: ");
-        sb.append(String.valueOf(executor.getQueue().size()));
+        sb.append(executor.getQueue().size());
         sb.append(";");
         sb.append("Cache Size: ");
-        sb.append(String.valueOf(ConcurrentServer.getCache().getItemCount()));
+        sb.append(ConcurrentServer.getCache().getItemCount());
         sb.append(";");
         Logger.sendMessage(sb.toString());
         return sb.toString();

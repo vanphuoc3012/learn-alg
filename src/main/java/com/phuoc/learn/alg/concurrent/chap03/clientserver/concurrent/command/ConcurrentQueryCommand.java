@@ -1,10 +1,12 @@
-package com.phuoc.learn.alg.concurrent.chap03.clientserver.common;
+package com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.command;
 
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.Command;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.wdi.data.WDIDAO;
 
-public class QueryCommand extends Command {
-    public QueryCommand(String[] commands) {
-        super(commands);
+public class ConcurrentQueryCommand extends Command {
+
+    public ConcurrentQueryCommand(String[] command) {
+        super(command);
     }
 
     @Override
@@ -17,9 +19,10 @@ public class QueryCommand extends Command {
             try {
                 return dao.query(command[1], command[2], Short.parseShort(command[3]));
             } catch (Exception e) {
-                return "ERROR;; Bad command";
+                return "ERROR;Bad Command";
             }
+        } else {
+            return "ERROR;Bad Command";
         }
-        return "ERROR; Bad command";
     }
 }

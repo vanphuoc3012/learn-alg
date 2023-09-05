@@ -1,6 +1,11 @@
 package com.phuoc.learn.alg.concurrent.chap03.clientserver.serial.server;
 
-import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.*;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.Command;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.Constants;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.serial.command.ErrorCommand;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.serial.command.QueryCommand;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.serial.command.ReportCommand;
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.serial.command.StopCommand;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.wdi.data.WDIDAO;
 
 import java.io.BufferedReader;
@@ -17,12 +22,10 @@ public class SerialServer {
         System.out.println("Initialization completed.");
         try (ServerSocket serverSocket = new ServerSocket(Constants.SERIAL_PORT)) {
             do {
-                try (
-                        Socket clientSocket = serverSocket.accept();
-                        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                        BufferedReader in = new BufferedReader(
-                                new InputStreamReader(clientSocket.getInputStream()));
-                ) {
+                try (Socket clientSocket = serverSocket.accept(); PrintWriter out = new PrintWriter(
+                        clientSocket.getOutputStream(),
+                        true); BufferedReader in = new BufferedReader(
+                        new InputStreamReader(clientSocket.getInputStream()))) {
                     String line = in.readLine();
                     Command command;
                     String[] commandData = line.split(";");

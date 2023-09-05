@@ -1,5 +1,6 @@
-package com.phuoc.learn.alg.concurrent.chap03.clientserver.common;
+package com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.command;
 
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.Command;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.server.ConcurrentServer;
 
 public class ConcurrentStopCommand extends Command {

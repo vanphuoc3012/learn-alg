@@ -1,10 +1,10 @@
-package com.phuoc.learn.alg.concurrent.chap03.clientserver.common;
+package com.phuoc.learn.alg.concurrent.chap03.clientserver.concurrent.command;
 
+import com.phuoc.learn.alg.concurrent.chap03.clientserver.common.Command;
 import com.phuoc.learn.alg.concurrent.chap03.clientserver.wdi.data.WDIDAO;
 
-public class ConcurrentQueryCommand extends Command {
-
-    public ConcurrentQueryCommand(String[] command) {
+public class ConcurrentErrorCommand extends Command {
+    public ConcurrentErrorCommand(String[] command) {
         super(command);
     }
 
@@ -20,8 +20,7 @@ public class ConcurrentQueryCommand extends Command {
             } catch (Exception e) {
                 return "ERROR;Bad Command";
             }
-        } else {
-            return "ERROR;Bad Command";
         }
+        return "ERROR;Bad Command";
     }
 }
